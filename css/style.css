@@ -1,0 +1,305 @@
+@import url("reset.css");
+
+body{
+    background-image: url(../img/html_bg.png);
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    font-family: Candara, Arial, sans-serif;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+#wrapper{
+    width: 990px;
+    margin: 0 auto;
+}
+
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+
+/*====================== 上層選單 ======================*/
+
+#main-sel{
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-sel a img{
+    display: block;
+    height: 40px;
+}
+
+#main-sel h3{
+    /* 背景圓形 */
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 50%;
+
+    /* 字體 */
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+    /* 圓形靠左貼近logo */
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+#main-sel ul{
+    display: flex;
+    align-items: center;
+}
+
+#main-sel ul li{
+    position: relative;
+}
+
+#main-sel ul li a{
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 10px 35px;
+}
+
+#main-sel ul li::after{
+    content: '';
+     
+    /* 分隔線 */
+    display: block;
+    height: 12px;
+    width: 1px;
+    background-color: darkgrey;
+
+    /* 位置 */
+    position: absolute;
+    right: 0;
+    top: 40%;   
+}
+
+#main-sel ul li:nth-child(5)::after,
+#main-sel ul li:nth-child(6)::after{
+    content: '';
+
+    display: none;
+}
+
+#main-sel ul li:not(li:last-child):hover{
+    /* 除了最後一個li的hover效果 */
+    border-bottom: 3px solid #e27c00;
+}
+
+#main-sel ul li:last-child a{
+    display: block;
+    padding: 0;
+    margin-right: 5px;
+}
+
+
+
+/*====================== 中間大圖 ======================*/
+#cycle{
+    width: 990px;
+    height: 550px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cycle a{
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: #363636;
+
+    /* 三角形位置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#cycle a.la{
+    /* 位置 */
+    margin-right: 10px;
+}
+
+#cycle a.ra{
+    /* 位置 */
+    margin-left: 10px;
+
+    /* flex順序 */
+    order: 1;
+}
+
+#cycle .la::after{
+    content: '';
+
+    display: block;
+    height: 25px;
+    width: 30px;
+    background-color: white;
+
+    /* 三角形 */
+    clip-path: polygon(70% 0, 20% 50%, 70% 100%);
+}
+
+#cycle a.ra::after{
+    content: '';
+
+    display: block;
+    height: 25px;
+    width: 30px;
+    background-color: white;
+    /* 三角形 */
+    clip-path: polygon(30% 2%, 80% 50%, 30% 100%);
+}
+
+
+/*====================== 圖片區 ======================*/
+
+#artist-1{
+    margin-top: 20px;
+}
+
+#artist-1 ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+#artist-1 li{
+    width: 240px;
+    height: 200px;
+
+    position: relative;
+}
+
+#artist-1 li h2{
+    height: 180px;
+    width: 220px;
+
+    /* 文字樣式及位置 */
+    text-align: center;
+    line-height: 180px;
+    color: white;
+    font-size: 20px;
+    
+    /* 位置 */
+    /* 至於img上方 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+}
+
+#artist-1 li:hover h2{
+    border: 2px solid white;
+}
+
+
+/*====================== 看更多(more)長條 ======================*/
+a.more-bar{
+    display: block;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    margin-top: 30px;
+}
+
+a.more-bar img{
+    margin-left: 10px;
+    height: 20px;
+}
+
+/* 第2個more加下底線 */
+#wrapper > .more-bar:nth-of-type(2){
+    border-bottom: 3px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/*====================== 大標 ======================*/
+#wrapper > h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+/*====================== 圖+文區 ======================*/
+#artist-2{
+    padding: 20px 0;
+}
+
+#artist-2 ul{
+    display: flex;
+
+    cursor: pointer;
+}
+
+#artist-2 ul li{
+    text-align: center;
+
+    padding: 0 50px;
+}
+
+#artist-2 ul li:nth-child(2){
+    border-right: 2px dotted black;
+    border-left: 2px dotted black;
+}
+
+#artist-2 ul li p{
+    padding-top: 50px;
+}
+
+
+/*====================== 地圖 ======================*/
+
+#map{
+    background-color: white;
+}
+
+#map h3{
+    padding: 10px;
+}
+
+#map iframe{
+    display: block;
+    width: 960px;
+
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+
+/*====================== 頁尾 ======================*/
+footer{
+    font-size: 13px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+
+
